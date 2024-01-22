@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat';
+  color: white;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+  perspective: 800px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+
+} 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#main{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #021024, #052659);
+}

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'montserrat';
+   color: white;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+  perspective: 800px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+
+} 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.webgl{
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #111, #000);
+}
+
+
+
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  opacity: 0;
+  pointer-events: none;
+  animation: fadeIn 2s ease-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, #0d112d, #273748);
+}
+
+model-viewer{
+  width:100%;
+  height: 450px;
+  
+}
+
+
+
+button {
+  font: inherit;
+  padding: 0.75em 3em;
+  background: #0d1f23;
+  border: 0.1em solid #132e35;
+  border-radius: 100vw;
+  cursor: pointer;
+  transition: background-color 1s;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  top: 480px;
+  right: 470px;
+  box-shadow: 5px 1px #171d1e;
+
+}
+
+button:hover,
+button:focus-visible {
+  background: #6555cb;  
+}
+
+button > span {
+  position: absolute;
+  z-index: -1;
+  width: 33.333%;
+  height: 100%;
+
+  background: transparent;
+  opacity: 0.5;
+}
+
+button > :first-child {
+  left: 0;
+  top: 0;
+}
+
+button > :last-child {
+  right: 0;
+  top: 0;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: hsl(200 60% 20%);
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+  opacity: 0;
+  transition: transform 1000ms 200ms, opacity 200ms;
+}
+
+button:active::before {
+  transform: scale(20);
+  opacity: 1;
+
+  transition: transform 1000ms, opacity 500ms;
+}
+
+button:has(:first-child:active)::before {
+  margin-left: 0;
+}
+
+button:has(:last-child:active)::before {
+  margin-right: 0;
+}
+
+button:has(:first-child:active)::before,
+button:has(:last-child:active)::before {
+  transition: transform 500ms, opacity 250ms;
+}
+
+
